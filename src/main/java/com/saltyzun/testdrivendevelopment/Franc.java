@@ -2,17 +2,12 @@ package com.saltyzun.testdrivendevelopment;
 
 public class Franc extends Money{
     
-    public Franc(int amount) {
-        this.amount = amount;
+    Franc(int amount, String currency) {
+        super(amount, currency);
     }
     
-    Franc times(int multiplier) {
-        return new Franc(amount * multiplier);
+    Money times(int multiplier) {
+        return Money.franc(amount * multiplier);
     }
-    
-    
-    public boolean equals(final Object obj) {
-        Franc franc = (Franc) obj;
-        return amount == franc.amount;
-    }
+
 }
